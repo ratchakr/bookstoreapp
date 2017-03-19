@@ -1,0 +1,23 @@
+version: "2"
+services:
+  app:
+    build: .
+    image: chakrar27/bookstore:v1
+    ports:
+      - 8080:8080
+    environment:
+      - BUCKET_NAME=books
+      - HOST=192.168.99.100
+    depends_on:
+      - db
+  db:
+    image: chakrar27/couchbase:4.6
+    ports:
+      - 8091:8091
+      - 8092:8092 
+      - 8093:8093 
+      - 8094:8094
+      - 11210:11210
+    environment:
+      - BUCKET_NAME=books
+      - DOCKER_HOST_IP=192.168.99.100
