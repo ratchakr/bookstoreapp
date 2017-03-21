@@ -25,6 +25,8 @@ public class BookStoreRunner implements CommandLineRunner {
 		log.info("...Inside BookStoreRunner...");
 		log.info(" bucket created = "+ bs.getBucket().name());
 		
+		log.info("Delete any existing data first");
+		bs.deleteAll();
 		
 		Book book = new Book ("History of Mankind", "Gabriel Garcia", "ISBN123", "History");
 		Book book2 = new Book ("War and Turpentine", "Stefan Hertmans", "ISBN222", "Fiction");
@@ -75,18 +77,7 @@ public class BookStoreRunner implements CommandLineRunner {
 			log.info("Book in Fiction = "+ b);
 		}        
         
-        
 
-		//Book book6 = new Book ("The Kite Runner", "Khaled Hosseini", "ISBN663", "Fiction");
-		
-		//bs.store(book6);
-		
-		//log.info("Trying to find book by title using N1QL ");
-		//bs.findByCriteria(null, null, "The Kite Runner", null, false);
-		
-		//bs.findByCriteria(null, null, null, "War and Turpentine", null, false);
-		
-		//bs.findByCriteria(null, null, null, "History of Mankind", null, false);
 		
 		
 	}

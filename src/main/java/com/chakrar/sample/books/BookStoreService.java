@@ -38,6 +38,21 @@ public class BookStoreService {
 	/**
 	 * Create a user account.
 	 */
+	public void deleteAll() {
+		log.info("  Calling deleteAll ");
+		try {
+			repo.deleteAll();;
+			log.info(" Data gone from DB ");
+		} catch (Exception e) {
+			log.error(" !!!!!!!!  ERROR   !!!!!!!!!");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Create a user account.
+	 */
 	public void save(final Book book) {
 		log.info("   Saving bool with title===" + book.getTitle());
 		try {

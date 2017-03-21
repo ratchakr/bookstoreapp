@@ -19,5 +19,9 @@ public interface BookStoreRepository extends CouchbasePagingAndSortingRepository
 	
 	List<Book> findByTitleStartsWithIgnoreCase(String title);
 	
+	List<Book> findByTitleLikeIgnoreCase(String titleFilter);
+	
 	List<Book> findByCategory(String category);
+	
+	List<Book> findByAuthorLikeIgnoreCase(String author);
 }
