@@ -1,8 +1,8 @@
 #!/bin/bash
 echo "Starting application run script..........."
 
+echo "sleep here"
 sleep 10
-
 
 echo "couchbase is running on "$HOST
 
@@ -18,10 +18,8 @@ echo "jq installed"
 
 echo "calling cb bucket Http Get"
 
-#response=$(curl -s -u Administrator:password "http://"$HOST":8091/pools/default/buckets/books" | jq -r '.name')
 
 response=''
-#$(curl -s -u Administrator:password "http://"$HOST":8091/pools/default/buckets/"$BUCKET_NAME | jq -r '.name')
 
 
 while [ -z $response ]
